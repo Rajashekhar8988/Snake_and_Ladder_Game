@@ -23,6 +23,7 @@ class Game{
 //if the player position go above 100, the player stays in the same previous position till the player gets exact 100 
 		    	
 		    	int i=position+=diceNumber;
+		    	
 		    	if (i>100) {
 		    		position=i-diceNumber;
 			    	System.out.println("You are exceeding the winning position, please stay at the same position");
