@@ -7,14 +7,17 @@ class Game{
 		public static int moment;
 		public static final int ladder=1;
 		public static final int snake=2;
-		
-//Using Random to get a Random of a dice from 1 to 6 
-//Checking for the position whether its a ladder, snake or no play
+		public static int diceCount;
+	
+//Using Random to get a Random of a dice from 1 to 6.
+//Checking for the position whether its a ladder, snake or no play.
 //Repeat till the Player reaches the winning position 100.
+//number of times the dice was played to win the game.
 		
 		public void checkMoment() {
 			while(position<100) {
 				diceNumber=(int)(Math.floor(Math.random()*10)%6+1);
+				diceCount=diceCount+1;
 		    	System.out.println("Die number is : "+diceNumber);
 		    moment=(int)(Math.floor(Math.random()*10)%3);
 		    switch(moment) {
@@ -43,13 +46,19 @@ class Game{
 		    default:
 		    	System.out.println("Stay at the same position");
 		    } 
-//In case the player position moves below 0, then the player restarts from 0
+//In case the player position moves below 0, then the player restarts from 0.
 		    
 		    if(position<0)
 		    	position=0;
-		    }
-	    	System.out.println("position of player is : "+position);
+		    
+//Position of the player after after each roll of a die.
+		    
+	    	System.out.println("Current position of player is : "+position);
 
+		    }
+			
+	    	System.out.println("Final position of player is : "+position);
+	    	System.out.println("No of times the Dice was rolled is : "+diceCount);
 		}
 		}
 
